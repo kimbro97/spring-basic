@@ -9,7 +9,7 @@ public class MemberServiceTest {
 
     @Test
     void join() {
-        //given 이런게 주어졌으떄
+        //given 이런게 주어졌으 때
         Member member = new Member(1L, "memberA", Grade.VIP);
         //when 이렇게 했을때
         memberService.join(member);
