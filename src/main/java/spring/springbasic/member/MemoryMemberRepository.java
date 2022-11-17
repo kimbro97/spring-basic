@@ -20,3 +20,5 @@ public class MemoryMemberRepository implements MemberRepository{
         return store.get(memberId);
     }
 }
+
+//@Component를 붙여주면 자동으로 빈에 등록이 된다

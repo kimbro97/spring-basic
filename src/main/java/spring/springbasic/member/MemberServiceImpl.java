@@ -28,3 +28,4 @@ public class MemberServiceImpl implements MemberService{
         return memberRepository;
     }
 }
+// @Autowired를 생성자에 붙여주면 자동으로 의존관계를 주입해준다.
