@@ -7,7 +7,8 @@ import spring.springbasic.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
         Member kimbro97 = new Member(1L, "kimbro97", Grade.VIP);
         memberService.join(kimbro97);
         Member findMember = memberService.findMember(1L);

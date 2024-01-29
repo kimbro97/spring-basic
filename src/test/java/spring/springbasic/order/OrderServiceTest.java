@@ -2,13 +2,13 @@ package spring.springbasic.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import spring.springbasic.discount.DiscountPolicy;
-import spring.springbasic.discount.FixDiscountPolicy;
+import spring.springbasic.AppConfig;
 import spring.springbasic.member.*;
 
 public class OrderServiceTest {
-    MemberService memberService = new MemberServiceImpl();
-    OrderService orderService = new OrderServiceImpl();
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     @Test
     void createOrder() {
