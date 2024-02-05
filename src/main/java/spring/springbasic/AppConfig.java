@@ -2,6 +2,7 @@ package spring.springbasic;
 
 import spring.springbasic.discount.DiscountPolicy;
 import spring.springbasic.discount.RateDiscountPolicy;
+import spring.springbasic.member.MemberRepository;
 import spring.springbasic.member.MemberService;
 import spring.springbasic.member.MemberServiceImpl;
 import spring.springbasic.member.MemoryMemberRepository;
@@ -13,7 +14,7 @@ public class AppConfig {
         return new MemberServiceImpl(memberRepository());
     }
 
-    private static MemoryMemberRepository memberRepository() {
+    private static MemberRepository memberRepository() {
         return new MemoryMemberRepository();
     }
 
