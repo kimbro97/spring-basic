@@ -2,6 +2,7 @@ package spring.springbasic.discount;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import spring.springbasic.AppConfig;
 import spring.springbasic.member.Grade;
 import spring.springbasic.member.Member;
 
@@ -9,7 +10,8 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RateDiscountPolicyTest {
-    DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    AppConfig appConfig = new AppConfig();
+    DiscountPolicy discountPolicy = appConfig.discountPolicy();
     @Test
     void discount() {
         Member kimbro = new Member(1L, "kimbro", Grade.VIP);
