@@ -1,5 +1,6 @@
 package spring.springbasic;
 
+import spring.springbasic.discount.DiscountPolicy;
 import spring.springbasic.discount.RateDiscountPolicy;
 import spring.springbasic.member.MemberService;
 import spring.springbasic.member.MemberServiceImpl;
@@ -20,7 +21,7 @@ public class AppConfig {
         return new OrderServiceImpl(memberRepository(), discountPolicy());
     }
 
-    private static RateDiscountPolicy discountPolicy() {
+    private static DiscountPolicy discountPolicy() {
         return new RateDiscountPolicy();
     }
 }
