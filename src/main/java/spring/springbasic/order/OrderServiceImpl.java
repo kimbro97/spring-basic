@@ -1,31 +1,22 @@
 package spring.springbasic.order;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import spring.springbasic.annotation.MainDiscountPolicy;
 import spring.springbasic.discount.DiscountPolicy;
-import spring.springbasic.discount.FixDiscountPolicy;
-import spring.springbasic.discount.RateDiscountPolicy;
 import spring.springbasic.member.Member;
 import spring.springbasic.member.MemberRepository;
-import spring.springbasic.member.MemoryMemberRepository;
 @ComponentScan
+//@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
-
-//    @Autowired
-//    public void setMemberRepository(MemberRepository memberRepository) {
-//        this.memberRepository = memberRepository;
-//    }
-//    @Autowired
-//    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
-//        this.discountPolicy = discountPolicy;
-//    }
-
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    @Autowired
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy rateDiscountPolicy) {
         this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
+        this.discountPolicy = rateDiscountPolicy;
     }
 
     @Override
